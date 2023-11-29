@@ -7,6 +7,7 @@ import typescript from "@rollup/plugin-typescript"
 import sourcemaps from "rollup-plugin-sourcemaps"
 import copy from "rollup-plugin-copy"
 import serve from "rollup-plugin-serve"
+import livereload from "rollup-plugin-livereload"
 
 const config: RollupOptions = {
   input: "src/main.ts",
@@ -17,7 +18,7 @@ const config: RollupOptions = {
   },
   external: "pixi.js",
   plugins: [
-    del({ targets: "out/*" }),
+    del({ targets: "out/*", runOnce: true }),
     resolve({
       preferBuiltins: false
     }),
@@ -31,7 +32,8 @@ const config: RollupOptions = {
         { src: "node_modules/pixi.js/dist/pixi.min.js", dest: "out", rename: "pixi.js" }
       ]
     }),
-    serve("out")
+    serve("out"),
+    livereload("out")
   ]
 }
 
