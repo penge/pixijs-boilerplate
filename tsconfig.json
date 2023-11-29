@@ -1,0 +1,23 @@
+{
+  "include": ["./src/**/*", "rollup.config.ts"],
+
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "rootDir": "./",
+    "baseUrl": "./",
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "allowUmdGlobalAccess": true,
+    "resolveJsonModule": true
+  }
+}
